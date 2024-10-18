@@ -1,0 +1,13 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue"  // Ensure Vue files are validated by ESLint
+  ],
+  "eslint.rules.customizations": [
+    {
+      "rule": "vue/no-multiple-template-root",
+      "severity": "off"
+    }
+  ]
+}
