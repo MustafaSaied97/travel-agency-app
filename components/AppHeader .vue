@@ -5,36 +5,36 @@
         >
             <MainLogoIcon />
 
-            <button @click="onOpenSidebar" class="block lg:hidden">==</button>
+            <button @click="onOpenSidebar" class="block lg:hidden">
+                <BurgerMenuIcon :color="'var(--primary-clr)'" />
+            </button>
             <h1 class="text-3xl font-bold underline">
                 {{ $t("hello", { name: "vue-i18n" }) }}
             </h1>
-            <aside
-                ref="sidebarRef"
-                id="sidebar"
-                :class="[
-                    'lg:sidebar-animation-none lg:static lg:h-fit lg:w-fit lg:flex-row lg:bg-transparent',
-                    'sidebar-animation flex h-screen flex-col gap-3 rounded-md bg-slate-400 p-3 backdrop:bg-black/20 md:w-[40%]',
-                ]"
-                :popover="'auto'"
-                @toggle="ontoggle"
-            >
-                <li
-                    v-for="section in sections"
-                    :key="section.text"
-                    class="block list-none rounded-md bg-gray-200 p-2 text-sm font-semibold hover:cursor-pointer hover:bg-gray-400"
-                >
-                    <NuxtLink :to="section.path"> {{ section.text }} </NuxtLink>
-                </li>
-            </aside>
+
             <LocaleSwitcher />
         </nav>
+        <aside
+            ref="sidebarRef"
+            id="sidebar"
+            class="sidebar-animation flex h-screen flex-col gap-3 rounded-md bg-slate-400 p-3 backdrop:bg-black/20 md:w-[40%]"
+            popover
+            @toggle="ontoggle"
+        >
+            <li
+                v-for="section in sections"
+                :key="section.text"
+                class="block list-none rounded-md bg-gray-200 p-2 text-sm font-semibold hover:cursor-pointer hover:bg-gray-400"
+            >
+                <NuxtLink :to="section.path"> {{ section.text }} </NuxtLink>
+            </li>
+        </aside>
     </header>
 </template>
 
 <script setup>
 import LocaleSwitcher from "./LocaleSwitcher.vue"
-import { MainLogoIcon } from "@/assets/icons"
+import { MainLogoIcon, BurgerMenuIcon } from "@/assets/icons"
 
 import { useTemplateRef, onMounted } from "vue"
 

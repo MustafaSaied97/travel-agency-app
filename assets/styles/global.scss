@@ -109,18 +109,6 @@
             transform: translateX(0);
         }
     }
-
-    // The "none" version disables the animation
-    .sidebar-animation-none {
-        opacity: 1;
-        transform: translateX(0);
-        transition: none;
-    }
-    [dir="rtl"] .sidebar-animation-none {
-        opacity: 1;
-        transform: translateX(0);
-        transition: none;
-    }
 }
 
 @layer base {
