@@ -1,9 +1,12 @@
 <template>
-  <AppHeader />
-  <slot />
-  <AppFooter />
+    <AppHeader />
+    <main
+        class="app-container min-h-[--main-content-height] bg-[--pr-bg] text-[--pr-text]"
+    >
+        <slot />
+    </main>
+    <AppFooter />
 </template>
 <script setup>
-import AppHeader from "@/components/AppHeader .vue";
-import AppFooter from "@/components/AppFooter .vue";
+import { AppHeader, AppFooter } from "@/components"
 </script>

@@ -9,7 +9,11 @@ module.exports = {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        '3xl': '1600px', // Define the 3xl breakpoint
+      },
+    },
   },
   plugins: [],
 }
