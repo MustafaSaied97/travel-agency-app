@@ -98,7 +98,7 @@
             <fieldset class="flex w-full flex-col items-start gap-4 sm:flex-1">
                 <label
                     for="Return"
-                    class="flex items-center gap-3 text-xs font-bold hover:cursor-pointer sm:text-sm"
+                    class="flex items-center gap-3 text-xs text-nowrap font-bold hover:cursor-pointer sm:text-sm"
                 >
                     <CabinIcon />
                     Cabin Class & Travelers
