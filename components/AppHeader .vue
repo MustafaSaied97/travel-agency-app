@@ -1,6 +1,6 @@
 <template>
     <header
-        :class="`fixed top-0 z-50 w-full bg-transparent ${isScrolled ? 'bg-white shadow-md' : ''}`"
+        :class="`fixed top-0 z-50 w-full bg-[--pr-bg] ${isScrolled ? 'bg-white shadow-md' : ''}`"
     >
         <nav
             class="app-container flex min-h-[--main-header-height] flex-wrap items-center justify-between gap-3 bg-transparent py-2 transition-all duration-200"
