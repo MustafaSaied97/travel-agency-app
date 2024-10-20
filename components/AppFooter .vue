@@ -1,6 +1,6 @@
 <template>
     <footer
-        class="responsive-text app-container grid-container min-h-[--main-footer-height] bg-[--tr-bg] py-10 shadow-md"
+        class="responsive-text app-container footer-container min-h-[--main-footer-height] bg-[--tr-bg] py-10 shadow-md"
     >
         <MainLogoIcon />
         <section
@@ -66,8 +66,8 @@ const sections = [
 ]
 </script>
 
-<style>
-.grid-container {
+<style scoped>
+.footer-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     justify-items: center;
