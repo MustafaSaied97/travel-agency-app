@@ -16,7 +16,7 @@ A simple travel agency booking landing page. This application allows users to bo
 
 ## Demo
 
-Link to the live demo 
+Link to the live demo  [text](https://travel-agency-booking-app.netlify.app/)
 
 ## Features
 
