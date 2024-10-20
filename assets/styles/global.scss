@@ -1,24 +1,10 @@
+@import './font.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: "Montserrat";
-    src: url("@/assets/fonts/Montserrat-VariableFont_wght.ttf")
-        format("truetype");
-    font-weight: 100 900; /* Define the weight range */
-    font-style: normal; /* Regular style */
-    font-display: swap;
-}
 
-@font-face {
-    font-family: "Montserrat";
-    src: url("@/assets/fonts/Montserrat-Italic-VariableFont_wght.ttf")
-        format("truetype");
-    font-weight: 100 900; /* Define the weight range */
-    font-style: italic; /* Italic style */
-    font-display: swap;
-}
 
 @layer components {
     .app-container {
@@ -121,7 +107,7 @@
     --main-header-height: 90px;
     --main-footer-height: 100px;
     --main-content-height: calc(
-        100vh - var(--main-footer-height) - var(--main-header-height)
+        100vh - var(--main-footer-height) 
     ); //in case of header not fixed use this calc(100vh -var(--main-header-height) - var(--main-footer-height));
 
     overflow-y: auto;
@@ -131,7 +117,7 @@
     --error-clr: "red";
     --bg-error-clr: rgb(241 18 55 / 0.05);
     //website
-    --pr-bg: white; //pr---primary
+    --pr-bg: #F3F7FC  ;
     --sec-bg: black; //sec---secondary
     --tr-bg: white; //tr---Tertiary
     --default-bg: white;
@@ -146,7 +132,7 @@
     //generic
     --pr-text: white;
     //website
-    --pr-bg: #1c1917;
+    --pr-bg: #F3F7FC  ;
     --sec-bg: #27272a; //#2F333A
     --tr-bg: #27272a; //#2F333A
     --default-bg: #1c1917;
