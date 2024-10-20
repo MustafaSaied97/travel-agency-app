@@ -1,10 +1,8 @@
-@import './font.css';
+@import "./font.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
 
 @layer components {
     .app-container {
@@ -107,7 +105,7 @@
     --main-header-height: 90px;
     --main-footer-height: 100px;
     --main-content-height: calc(
-        100vh - var(--main-footer-height) 
+        100vh - var(--main-footer-height)
     ); //in case of header not fixed use this calc(100vh -var(--main-header-height) - var(--main-footer-height));
 
     overflow-y: auto;
@@ -117,7 +115,7 @@
     --error-clr: "red";
     --bg-error-clr: rgb(241 18 55 / 0.05);
     //website
-    --pr-bg: #F3F7FC  ;
+    --pr-bg: #f3f7fc;
     --sec-bg: black; //sec---secondary
     --tr-bg: white; //tr---Tertiary
     --default-bg: white;
@@ -126,13 +124,14 @@
     --primary-clr: #eaa121;
     --primary-clr-50: color-mix(in srgb, var(--primary-clr) 50%, #0000 15%);
     --primary-clr-15: color-mix(in srgb, var(--primary-clr) 15%, #0000 15%);
+    --primary-clr-5: color-mix(in srgb, var(--primary-clr) 5%, #0000 15%);
 }
 
 [data-theme="dark"] {
     //generic
     --pr-text: white;
     //website
-    --pr-bg: #F3F7FC  ;
+    --pr-bg: #f3f7fc;
     --sec-bg: #27272a; //#2F333A
     --tr-bg: #27272a; //#2F333A
     --default-bg: #1c1917;

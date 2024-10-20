@@ -1,6 +1,8 @@
 <template>
     <svg
         :fill="color"
+        :width="size"
+        :height="size"
         version="1.1"
         id="Capa_1"
         xmlns="http://www.w3.org/2000/svg"
@@ -25,5 +27,5 @@
 </template>
 
 <script setup>
-const { size = "22", color = "var(--primary-clr)" } = defineProps(["size", "color"])
+const { size = "12", color = "var(--primary-clr)" } = defineProps(["size", "color"])
 </script>
