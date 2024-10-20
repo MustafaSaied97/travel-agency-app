@@ -13,10 +13,6 @@
 
 <script setup>
 import { BookingFormSection, BlogSection } from "@/components"
-import { useI18n } from 'vue-i18n';
-const { t} = useI18n();
-// console.log('discover_paradise_worlds',t("discover_paradise_worlds"));
-
 definePageMeta({
     layout: "default",
 })

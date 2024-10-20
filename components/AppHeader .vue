@@ -55,7 +55,7 @@
                 <button
                     class="text-nowrap rounded-md bg-[--primary-clr] p-3 text-sm font-medium text-white"
                 >
-                    Sign In
+                    {{ $t("sign_in") }}
                 </button>
             </div>
         </aside>

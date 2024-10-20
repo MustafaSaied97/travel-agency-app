@@ -22,7 +22,6 @@ const languagesOptions = languages.map((lang) => ({
     value: lang,
 }))
 const changeLocale = (selectOpt) => {
-    console.log("selectOpt", selectOpt)
     appLocale.value = selectOpt // Store in cookie
 }
 </script>
