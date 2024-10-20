@@ -23,7 +23,7 @@ import BlogCard from "./BlogCard.vue"
 import ManggaraiBaratImg from "@/assets/images/destinations/manggarai-barat.png"
 import BogorImg from "@/assets/images/destinations/bogor.png"
 import JakartaImg from "@/assets/images/destinations/jakarta.png"
-import KotaSemarangImg from "@/assets/images/destinations/jakarta.png"
+import KotaSemarangImg from "@/assets/images/destinations/kota-semarang.png"
 const destinations = [
     {
         destination: "Manggarai Barat",

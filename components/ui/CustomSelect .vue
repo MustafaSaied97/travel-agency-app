@@ -1,16 +1,17 @@
 <template>
-    <div tabindex="-1" @blur="() => (isOpen = false)" class="relative">
+    <div tabindex="-1" @blur="() => (isOpen = false)" class="relative w-full">
         <!-- Select Box -->
         <div
             :class="
                 twMerge(
-                    'flex w-52 cursor-pointer items-center justify-between rounded border bg-white py-2 px-2',
+                    'flex w-52 cursor-pointer items-center justify-between rounded border bg-white px-2 py-2',
                     className,
                 )
             "
             @click="toggleDropdown"
         >
-            <span>{{ selectedLabel }}</span>
+            <span v-if="selectedLabel">{{ selectedLabel }}</span>
+            <span v-else class="text-gray-400">{{ placeholder }}</span>
 
             <span
                 :class="{ 'rotate-180': isOpen }"
@@ -110,7 +111,7 @@ const selectedLabel = computed(() => {
     const selectedOption = props.options.find(
         (option) => option.value === selected.value,
     )
-    return selectedOption ? selectedOption.label : props.placeholder
+    return selectedOption ? selectedOption.label : null
 })
 </script>
 

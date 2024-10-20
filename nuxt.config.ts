@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     compatibilityDate: "2024-04-03",
     devtools: { enabled: true },
@@ -14,7 +13,10 @@ export default defineNuxtConfig({
     },
 
     modules: [
-      // 'cookie-universal-nuxt', // Ensure this is present
-      // other modules...
-  ],
+        // other modules...
+    ],
+
+    plugins: [
+        "~/plugins/moment.js", // Register the moment.js plugin here
+    ],
 })

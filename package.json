@@ -13,6 +13,7 @@
   "dependencies": {
     "cookie-universal-nuxt": "^2.2.2",
     "eslint-config-prettier": "^9.1.0",
+    "moment": "^2.30.1",
     "nuxt": "^3.13.0",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwind-merge": "^2.5.4",

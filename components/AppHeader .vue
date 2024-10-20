@@ -19,7 +19,7 @@
                 <LocaleSwitcher />
 
                 <button
-                    class="rounded-md bg-[--primary-clr] px-3 py-2 text-sm font-medium text-white"
+                    class="rounded-md bg-[--primary-clr] px-3 py-2 text-nowrap text-sm font-medium text-white"
                 >
                     Sign In
                 </button>
@@ -52,7 +52,7 @@
                 <LocaleSwitcher />
 
                 <button
-                    class="rounded-md bg-[--primary-clr] p-3 text-sm font-medium text-white"
+                    class="rounded-md bg-[--primary-clr] p-3 text-nowrap text-sm font-medium text-white"
                 >
                     Sign In
                 </button>
