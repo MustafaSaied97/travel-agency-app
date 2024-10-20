@@ -5,7 +5,8 @@
         <nav
             class="app-container flex min-h-[--main-header-height] flex-wrap items-center justify-between gap-3 bg-transparent py-2 transition-all duration-200"
         >
-            <MainLogoIcon />
+            <NuxtLink to="/"> <MainLogoIcon /></NuxtLink>
+
             <ul class="hidden justify-between gap-2 lg:flex">
                 <li
                     v-for="section in sections"
@@ -19,7 +20,7 @@
                 <LocaleSwitcher />
 
                 <button
-                    class="rounded-md bg-[--primary-clr] px-3 py-2 text-nowrap text-sm font-medium text-white"
+                    class="text-nowrap rounded-md bg-[--primary-clr] px-3 py-2 text-sm font-medium text-white"
                 >
                     Sign In
                 </button>
@@ -39,7 +40,7 @@
             popover
             @toggle="ontoggle"
         >
-            <MainLogoIcon />
+            <NuxtLink to="/"> <MainLogoIcon /></NuxtLink>
 
             <li
                 v-for="section in sections"
@@ -52,7 +53,7 @@
                 <LocaleSwitcher />
 
                 <button
-                    class="rounded-md bg-[--primary-clr] p-3 text-nowrap text-sm font-medium text-white"
+                    class="text-nowrap rounded-md bg-[--primary-clr] p-3 text-sm font-medium text-white"
                 >
                     Sign In
                 </button>
@@ -71,8 +72,8 @@ const { isScrolled } = useScroll() // Use the composable to get isScrolled
 
 const sections = [
     { text: "Home", path: "/" },
-    { text: "Promo", path: "/promo" },
-    { text: "My Booking", path: "my-booking" },
+    { text: "Promo", path: "" },
+    { text: "My Booking", path: "" },
 ]
 const sidebarRef = useTemplateRef("sidebarRef")
 const isSidebarOpen = ref(false)
