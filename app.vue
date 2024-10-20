@@ -31,7 +31,7 @@ watchEffect(() => {
                 content: "Discover and book your next vacation with ease.",
             },
             { property: "og:image", content: "/travel-app-logo.png" },
-            { property: "og:url", content: "https://www.yourtravelapp.com" },
+            { property: "og:url", content: "https://travel-agency-booking-app.netlify.app/" },
             { name: "twitter:card", content: "summary_large_image" },
             { name: "twitter:title", content: "Best Travel Booking App" },
             {
