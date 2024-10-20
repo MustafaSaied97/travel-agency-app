@@ -42,28 +42,40 @@
 </template>
 
 <script setup>
-import { MainLogoIcon, BurgerMenuIcon, CloseMenuIcon } from "@/assets/icons"
-const sections = [
+import { MainLogoIcon } from "@/assets/icons"
+import { computed } from "vue"
+import { useI18n } from "vue-i18n"
+const { t } = useI18n()
+const sections = computed(() => [
     {
-        title: "About",
-        subSections: ["About GooseFlight", "How it works", "Blog", "Forum"],
-    },
-    {
-        title: "Support",
+        title: t("about"),
         subSections: [
-            "Help Center",
-            "Contact us",
-            "Privacy policy",
-            "Trust and safety",
-            "Accessibility",
-            "Terms of service",
+            t("about_gooseflight"),
+            t("how_it_works"),
+            t("blog"),
+            t("forum"),
         ],
     },
     {
-        title: "Get the app",
-        subSections: ["Tripma for Android", "Tripma for iOS", "Mobile site"],
+        title: t("support"),
+        subSections: [
+            t("help_center"),
+            t("contact_us"),
+            t("privacy_policy"),
+            t("trust_and_safety"),
+            t("accessibility"),
+            t("terms_of_service"),
+        ],
     },
-]
+    {
+        title: t("get_the_app"),
+        subSections: [
+            t("tripma_for_android"),
+            t("tripma_for_ios"),
+            t("mobile_site"),
+        ],
+    },
+])
 </script>
 
 <style scoped>

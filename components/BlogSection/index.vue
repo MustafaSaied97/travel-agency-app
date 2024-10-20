@@ -4,10 +4,10 @@
             <h2
                 class="text-lg font-[700] text-[--secondary-clr] sm:text-xl md:text-2xl"
             >
-                Popular Destinations
+                {{ $t("popular_destinations") }}
             </h2>
             <p class="text-xs text-[--secondary-clr] sm:text-sm">
-                Vacations to make your experience enjoyable in Indonesia!
+                {{ $t("vacations_to_enjoy_indonesia") }}
             </p>
         </div>
         <ul class="blog-container">
@@ -28,28 +28,28 @@ const destinations = [
     {
         destination: "Manggarai Barat",
         trip: "Flores Road Trip 3D2N",
-        duration: "3 Days",
+        duration: 3,
         price: "$375",
         image: ManggaraiBaratImg,
     },
     {
         destination: "Bogor",
         trip: "Forrester Glamping Co Bogor",
-        duration: "1 Days",
+        duration: 1,
         price: "$375",
         image: BogorImg,
     },
     {
         destination: "Jakarta",
         trip: "Paket Tiket Pesawat Jakarta Bali",
-        duration: "",
+        duration: 0,
         price: "$375",
         image: JakartaImg,
     },
     {
         destination: "Kota Semarang",
         trip: "Desa Wisata Kandri",
-        duration: "14 Days",
+        duration: 14,
         price: "$375",
         image: KotaSemarangImg,
     },

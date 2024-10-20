@@ -22,7 +22,7 @@
                 <button
                     class="text-nowrap rounded-md bg-[--primary-clr] px-3 py-2 text-sm font-medium text-white"
                 >
-                    Sign In
+                    {{ $t("sign_in") }}
                 </button>
             </div>
             <button @click="onOpenSidebar" class="block lg:hidden">
@@ -66,15 +66,18 @@
 import LocaleSwitcher from "./LocaleSwitcher.vue"
 import { MainLogoIcon, BurgerMenuIcon, CloseMenuIcon } from "@/assets/icons"
 import { useScroll } from "@/composables/useScroll" // Import the composable
+import { useTemplateRef, computed } from "vue"
+import { useI18n } from "vue-i18n"
 
-import { useTemplateRef, onMounted } from "vue"
+const { t } = useI18n()
+
 const { isScrolled } = useScroll() // Use the composable to get isScrolled
 
-const sections = [
-    { text: "Home", path: "/" },
-    { text: "Promo", path: "" },
-    { text: "My Booking", path: "" },
-]
+const sections = computed(() => [
+    { text: t("home"), path: "/" },
+    { text: t("promo"), path: "" },
+    { text: t("my_booking"), path: "" },
+])
 const sidebarRef = useTemplateRef("sidebarRef")
 const isSidebarOpen = ref(false)
 const onOpenSidebar = () => {

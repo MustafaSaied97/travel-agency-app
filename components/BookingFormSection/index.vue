@@ -33,13 +33,13 @@
                     class="flex gap-3 text-sm font-bold hover:cursor-pointer"
                 >
                     <PlaneTakeOffIcon />
-                    From
+                    {{ $t("flight_from") }}
                 </label>
                 <input
                     type="text"
                     id="from"
                     class="w-full border-b-2 border-transparent pb-1 text-sm outline-none hover:border-[--primary-clr] focus:border-[--primary-clr]"
-                    placeholder="Flight from?"
+                    :placeholder="$t('flight_from')"
                     v-model="formData.form"
                 />
             </fieldset>
@@ -49,28 +49,28 @@
                     class="flex gap-3 text-sm font-bold hover:cursor-pointer"
                 >
                     <PlaneLandingIcon />
-                    to
+                    {{ $t("to") }}
                 </label>
                 <input
                     type="text"
                     id="to"
                     class="w-full border-b-2 border-transparent pb-1 text-sm outline-none hover:border-[--primary-clr] focus:border-[--primary-clr]"
-                    placeholder="Flight to?"
+                    :placeholder="$t('flight_to')"
                     v-model="formData.to"
                 />
             </fieldset>
 
             <fieldset class="flex w-full flex-col items-start gap-4 sm:flex-1">
                 <label
-                    for="Depart"
+                    for="depart"
                     class="flex items-center gap-3 text-sm font-bold hover:cursor-pointer"
                 >
                     <CalendarIcon />
-                    Depart
+                    {{ $t("depart") }}
                 </label>
                 <DatePicker
                     v-model="formData.Depart"
-                    name="Depart"
+                    :name="$t('depart')"
                     :minDate="todayDate"
                     :maxDate="formData.Return"
                     :placeholder="'DD/MM/YYYY'"
@@ -80,15 +80,15 @@
             </fieldset>
             <fieldset class="flex w-full flex-col items-start gap-4 sm:flex-1">
                 <label
-                    for="Return"
+                    for="return"
                     class="flex items-center gap-3 text-sm font-bold hover:cursor-pointer"
                 >
                     <CalendarIcon />
-                    Return
+                    {{ $t("return") }}
                 </label>
                 <DatePicker
                     v-model="formData.Return"
-                    name="Return"
+                    name="return"
                     :minDate="formData?.Depart || todayDate"
                     :placeholder="'DD/MM/YYYY'"
                     returnedDateFormat="YYYY-MM-DD"
@@ -97,11 +97,11 @@
             </fieldset>
             <fieldset class="flex w-full flex-col items-start gap-4 sm:flex-1">
                 <label
-                    for="Return"
-                    class="flex items-center gap-3 text-xs text-nowrap font-bold hover:cursor-pointer sm:text-sm"
+                    for="CabinInfo"
+                    class="flex items-center gap-3 text-nowrap text-xs font-bold hover:cursor-pointer sm:text-sm"
                 >
                     <CabinIcon />
-                    Cabin Class & Travelers
+                    {{ $t("cabin_class_and_travelers") }}
                 </label>
                 <CustomSelect
                     v-model="formData.CabinInfo"
@@ -127,7 +127,7 @@
 </template>
 
 <script setup>
-import { ref, reactive } from "vue"
+import { computed, reactive } from "vue"
 import DatePicker from "./DatePicker.vue"
 import moment from "moment"
 import { CustomSelect } from "@/components"
@@ -139,15 +139,17 @@ import {
     CabinIcon,
     PeopleIcon,
 } from "@/assets/icons"
-const tripTypes = [
-    { type: "one-way", label: "One Way" },
-    { type: "round-trip", label: "Round Trip" },
-]
-const CabinInfoOptions = [
-    { label: "1 adult, Economy", value: "1,economy" },
-    { label: "2 adult, Class", value: "2,class" },
-    { label: "2 adult, Economy", value: "2,economy" },
-]
+import { useI18n } from "vue-i18n"
+const { t } = useI18n()
+const tripTypes = computed(() => [
+    { type: "one-way", label: t("one_way") },
+    { type: "round-trip", label: t("round_trip") },
+])
+const CabinInfoOptions = computed(() => [
+    { label: `1 ${t("adult")}, ${t("economy")}`, value: "1,economy" },
+    { label: `2 ${t("adult")}, ${t("class")}`, value: "2,class" },
+    { label: `2 ${t("adult")}, ${t("economy")}`, value: "2,economy" },
+])
 const todayDate = moment().format("YYYY-MM-DD")
 const formData = reactive({
     tripType: "one-way",

@@ -11,7 +11,7 @@
             @click="toggleDropdown"
         >
             <span v-if="selectedLabel">{{ selectedLabel }}</span>
-            <span v-else class="text-gray-400">{{ placeholder }}</span>
+            <span v-else class="text-gray-400">{{ localizedPlaceholder }}</span>
 
             <span
                 :class="{ 'rotate-180': isOpen }"
@@ -65,8 +65,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref, computed } from "vue"
 import { twMerge } from "tailwind-merge"
+import { useI18n } from "vue-i18n"
+const { t } = useI18n()
 const props = defineProps({
     options: {
         type: Array,
@@ -78,7 +80,7 @@ const props = defineProps({
     },
     placeholder: {
         type: String,
-        default: "Select an option",
+        default: "",
     },
     className: {
         type: String,
@@ -89,7 +91,9 @@ const props = defineProps({
         default: "",
     },
 })
-
+const localizedPlaceholder = computed(() => {
+    return props.placeholder || t("choose")
+})
 const emit = defineEmits(["update:modelValue"])
 
 const isOpen = ref(false)
