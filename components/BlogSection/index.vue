@@ -1,5 +1,5 @@
 <template>
-    <section class="flex flex-col gap-y-12 pb-6">
+    <section class="flex flex-col gap-y-12 pb-28">
         <div class="flex flex-col gap-y-1">
             <h2
                 class="text-lg font-[700] text-[--secondary-clr] sm:text-xl md:text-2xl"

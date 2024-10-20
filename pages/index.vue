@@ -1,7 +1,7 @@
 <template>
     <div class="flex w-full flex-col">
         <h1
-            class="text-gradient mx-auto pb-12 pt-48 text-center font-[PlayfairDisplay] text-2xl font-extrabold sm:w-[75%] sm:text-4xl lg:text-6xl"
+            class="text-gradient mx-auto pb-24 pt-48 text-center font-[PlayfairDisplay] text-2xl font-bold sm:w-[75%] sm:text-4xl lg:text-6xl"
         >
             Discover Our Paradise Worlds, Travel Anywhere Now!
         </h1>
