@@ -5,7 +5,7 @@
 </template>
 <script setup>
 import { useI18n } from "vue-i18n"
-
+import travelAppLogoImg from "@/assets/images/travel-app-logo.png"
 const { locale } = useI18n()
 watchEffect(() => {
     useHead({
@@ -30,8 +30,11 @@ watchEffect(() => {
                 property: "og:description",
                 content: "Discover and book your next vacation with ease.",
             },
-            { property: "og:image", content: "/travel-app-logo.png" },
-            { property: "og:url", content: "https://travel-agency-booking-app.netlify.app/" },
+            { property: "og:image", content: travelAppLogoImg },
+            {
+                property: "og:url",
+                content: "https://travel-agency-booking-app.netlify.app/",
+            },
             { name: "twitter:card", content: "summary_large_image" },
             { name: "twitter:title", content: "Best Travel Booking App" },
             {
@@ -39,7 +42,7 @@ watchEffect(() => {
                 content:
                     "Find your perfect vacation destination and book it at the best rates.",
             },
-            { name: "twitter:image", content: "/travel-app-logo.png" },
+            { name: "twitter:image", content: travelAppLogoImg },
             {
                 name: "viewport",
                 content: "width=device-width, initial-scale=1",
