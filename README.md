@@ -1,75 +1,43 @@
-# Nuxt 3 Minimal Starter
+# Travel Agency Booking App
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A simple travel agency booking landing page. This application allows users to book their trips and provides a user-friendly experience. The project is designed to be extendable due to its solid structure.
 
-## Setup
+## Table of Contents
 
-Make sure to install the dependencies:
+- [Demo](#demo)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup and Installation](#setup-and-installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-```bash
-# npm
-npm install
+## Demo
 
-# pnpm
-pnpm install
+Link to the live demo 
 
-# yarn
-yarn install
+## Features
 
-# bun
-bun install
-```
+- **Multi-language support**: AR (default) and EN with dynamic RTL/LTR switching.
+- **Booking Form**: Users can input trip details (From, To, Date, Class, Type, Passengers).
+- **Blog Section**: Display of travel-related blog posts.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **SEO Optimization**: Built with Nuxt.js for better search engine visibility.
+- **Extendable Structure**: The project is built with SOLID principles, allowing for easy extensions and modifications.
 
-## Development Server
+## Technologies Used
 
-Start the development server on `http://localhost:3000`:
+- **Vue.js**: Frontend framework for building interactive web applications.
+- **Nuxt.js**: Framework based on Vue.js for server-side rendering (SSR).
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **i18n**: Internationalization support for multi-language implementation.
 
-```bash
-# npm
-npm run dev
+## Setup and Installation
 
-# pnpm
-pnpm run dev
+To get started with the project locally, follow these steps:
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/travel-agency-app.git
