@@ -23,6 +23,6 @@ definePageMeta({
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    background-image: linear-gradient(to right, #183867 10%, #eaa121 70%);
+    background-image: linear-gradient(to right, var(--secondary-clr) 20%, var(--primary-clr) 70%);
 }
 </style>
