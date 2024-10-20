@@ -1,6 +1,6 @@
 <template>
     <header
-        :class="`fixed top-0 z-50 w-full bg-transparent ${isScrolled ? 'bg-white shadow-md' : ''}`"
+        :class="`fixed top-0 lg:h-fit h-[--main-header-height] z-50 w-full bg-[--pr-bg] ${isScrolled ? 'bg-white shadow-md ' : ''}`"
     >
         <nav
             class="app-container flex min-h-[--main-header-height] flex-wrap items-center justify-between gap-3 bg-transparent py-2 transition-all duration-200"
@@ -25,7 +25,7 @@
                     {{ $t("sign_in") }}
                 </button>
             </div>
-            <button @click="onOpenSidebar" class="block lg:hidden">
+            <button @click="onOpenSidebar" popovertarget="sidebar" class="block lg:hidden">
                 <CloseMenuIcon
                     v-if="isSidebarOpen"
                     :color="'var(--primary-clr)'"
@@ -37,7 +37,7 @@
             ref="sidebarRef"
             id="sidebar"
             class="sidebar-animation flex h-screen flex-col gap-3 rounded-md bg-[--tr-bg] px-5 py-10 shadow-md backdrop:bg-black/20 md:w-[40%]"
-            popover
+            
             @toggle="ontoggle"
         >
             <NuxtLink to="/"> <MainLogoIcon /></NuxtLink>
