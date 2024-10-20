@@ -125,6 +125,11 @@
     --primary-clr-50: color-mix(in srgb, var(--primary-clr) 50%, #0000 15%);
     --primary-clr-15: color-mix(in srgb, var(--primary-clr) 15%, #0000 15%);
     --primary-clr-5: color-mix(in srgb, var(--primary-clr) 5%, #0000 15%);
+
+    --secondary-clr: #183867;
+    --secondary-clr-50: color-mix(in srgb, var(--secondary-clr) 50%, #0000 15%);
+    --secondary-clr-15: color-mix(in srgb, var(--secondary-clr) 15%, #0000 15%);
+    --secondary-clr-5: color-mix(in srgb, var(--secondary-clr) 5%, #0000 15%);
 }
 
 [data-theme="dark"] {

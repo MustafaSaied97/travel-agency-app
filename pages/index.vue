@@ -1,17 +1,19 @@
 <template>
-    <div>
+    <div class="flex w-full flex-col">
         <h1
-            class="text-gradient mx-auto pt-48  pb-12 text-center font-[PlayfairDisplay] text-2xl font-extrabold sm:w-[75%] sm:text-4xl lg:text-6xl"
+            class="text-gradient mx-auto pb-12 pt-48 text-center font-[PlayfairDisplay] text-2xl font-extrabold sm:w-[75%] sm:text-4xl lg:text-6xl"
         >
             Discover Our Paradise Worlds, Travel Anywhere Now!
         </h1>
 
-        <BookingForm />
-        <BlogCard />
+        <BookingFormSection />
+        <BlogSection />
     </div>
 </template>
 
 <script setup>
+import { BookingFormSection, BlogSection } from "@/components"
+
 definePageMeta({
     layout: "default",
 })
