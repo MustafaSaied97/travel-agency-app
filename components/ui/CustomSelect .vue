@@ -65,7 +65,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue"
+import { ref, computed, watch } from "vue"
 import { twMerge } from "tailwind-merge"
 import { useI18n } from "vue-i18n"
 const { t } = useI18n()
@@ -102,6 +102,13 @@ const selected = ref(props.modelValue)
 const toggleDropdown = () => {
     isOpen.value = !isOpen.value
 }
+
+watch(
+    () => props.modelValue,
+    (newValue) => {
+        selected.value = newValue
+    },
+)
 
 const selectOption = (option) => {
     selected.value = option.value

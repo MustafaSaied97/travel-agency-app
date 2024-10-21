@@ -37,5 +37,7 @@
     "adult": "adult",
     "choose": "Choose...",
     "booking_submitted": "Booking submitted! We'll be in touch soon.",
-    "fill_all_fields": "Please fill in all fields."
+    "validation": {
+        "fields_required": "Please ensure all fields are filled correctly."
+    }
 }

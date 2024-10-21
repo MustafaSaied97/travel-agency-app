@@ -140,18 +140,24 @@ import {
     PeopleIcon,
 } from "@/assets/icons"
 import { useI18n } from "vue-i18n"
+import { useVuelidate } from "@vuelidate/core"
+import { required, maxLength, alpha } from "@vuelidate/validators"
+
 const { $toast } = useNuxtApp()
 const { t } = useI18n()
+
 const tripTypes = computed(() => [
     { type: "one-way", label: t("one_way") },
     { type: "round-trip", label: t("round_trip") },
 ])
+
 const CabinInfoOptions = computed(() => [
     { label: `1 ${t("adult")}, ${t("economy")}`, value: "1,economy" },
     { label: `2 ${t("adult")}, ${t("class")}`, value: "2,class" },
     { label: `2 ${t("adult")}, ${t("economy")}`, value: "2,economy" },
 ])
 const todayDate = moment().format("YYYY-MM-DD")
+
 const formData = reactive({
     tripType: "one-way",
     from: "",
@@ -161,15 +167,42 @@ const formData = reactive({
     CabinInfo: "",
 })
 
-const handleSubmitForm = () => {
-    const isValid = Object.values(formData).every(
-        (value) => value.trim() !== "",
-    )
-    if (isValid) {
-        $toast.success(t("booking_submitted"))
-    } else {
-        $toast.error(t("fill_all_fields"))
+const rules = {
+    formData: {
+        from: { required, alpha, maxLength: maxLength(100) },
+        to: { required, alpha, maxLength: maxLength(100) },
+        Depart: { required },
+        Return: {},
+    },
+}
+
+const $v = useVuelidate(rules, { formData })
+
+const handleResetForm = () => {
+    const initialValues = {
+        tripType: "one-way",
+        from: "",
+        to: "",
+        Depart: "",
+        Return: "",
+        CabinInfo: "",
     }
+    formData.CabinInfo = ""
+    for (const key in initialValues) {
+        formData[key] = initialValues[key]
+    }
+
+    $v.value.$reset()
+}
+
+const handleSubmitForm = () => {
+    $v.value.$touch()
+    if ($v.value.$invalid) {
+        $toast.error(t("validation.fields_required"))
+        return
+    }
+    $toast.success(t("booking_submitted"))
+    handleResetForm()
 }
 </script>
 
