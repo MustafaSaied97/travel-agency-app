@@ -18,5 +18,6 @@ export default defineNuxtConfig({
 
     plugins: [
         "~/plugins/moment.js", // Register the moment.js plugin here
+        "~/plugins/vue-toast-notification.js", // Register the moment.js plugin here
     ],
 })

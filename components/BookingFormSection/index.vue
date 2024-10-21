@@ -40,7 +40,7 @@
                     id="from"
                     class="w-full border-b-2 border-transparent pb-1 text-sm outline-none hover:border-[--primary-clr] focus:border-[--primary-clr]"
                     :placeholder="$t('flight_from')"
-                    v-model="formData.form"
+                    v-model="formData.from"
                 />
             </fieldset>
             <fieldset class="flex w-full flex-col items-start gap-4 sm:flex-1">
@@ -140,6 +140,7 @@ import {
     PeopleIcon,
 } from "@/assets/icons"
 import { useI18n } from "vue-i18n"
+const { $toast } = useNuxtApp()
 const { t } = useI18n()
 const tripTypes = computed(() => [
     { type: "one-way", label: t("one_way") },
@@ -161,7 +162,14 @@ const formData = reactive({
 })
 
 const handleSubmitForm = () => {
-    console.log("formData", formData)
+    const isValid = Object.values(formData).every(
+        (value) => value.trim() !== "",
+    )
+    if (isValid) {
+        $toast.success(t("booking_submitted"))
+    } else {
+        $toast.error(t("fill_all_fields"))
+    }
 }
 </script>
 

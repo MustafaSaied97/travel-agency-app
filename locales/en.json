@@ -35,6 +35,7 @@
     "economy": "Economy",
     "class": "Class",
     "adult": "adult",
-    "choose": "Choose..."
-
+    "choose": "Choose...",
+    "booking_submitted": "Booking submitted! We'll be in touch soon.",
+    "fill_all_fields": "Please fill in all fields."
 }
